@@ -1,4 +1,5 @@
 import resultadosDelDia from "../datos/resultadosDelDia";
+import Image from 'next/image';
 
 export default function Resultados(props) {
   return (
@@ -7,17 +8,19 @@ export default function Resultados(props) {
       <ul className="resultados-del-dia">
         {props?.data?.map((resultado, key) => (
            resultado.estado ? (<li key={key}>
-            <div className="estado-del-juego">{resultado?.estado}</div>
+            <div className="estado-del-juego">
+              <span className='estado-del-juego'>{resultado?.estado}</span></div>
+              <span className='span-outs'>{resultado?.outs}</span>
             <div className="equipo-visitante resultado">
               <div className="logo-equipo">
-                <img src={resultado?.vlogo} />
+                <Image src={`/logos/${resultado?.visitanteLogo}.png`} width='30' height='30'/>
                 <span>{resultado?.visitante}</span>
               </div>
               <div className="carreras">{resultado?.visitanteCarreras}</div>
             </div>
             <div className="equipo-local resultado">
               <div className="logo-equipo">
-                <img src={resultado?.llogo} />
+              <Image src={`/logos/${resultado?.localLogo}.png`} width='30' height='30'/>
                 <span>{resultado?.local}</span>
               </div>
               <div className="carreras">{resultado?.localCarreras}</div>
@@ -35,7 +38,7 @@ export default function Resultados(props) {
             
             <div className="equipo-visitante resultado">
               <div className="logo-equipo">
-                <img src={resultado?.vlogoAyer} />
+              <Image src={`/logos/${resultado?.visitanteLogoAyer}.png`} width='30' height='30'/>
                 <span>{resultado?.visitanteAyer}</span>
               </div>
               <div className="carreras">{resultado?.visitanteCarrerasAyer}</div>
@@ -43,7 +46,7 @@ export default function Resultados(props) {
 
             <div className="equipo-local resultado">
               <div className="logo-equipo">
-                <img src={resultado?.llogoAyer} />
+              <Image src={`/logos/${resultado?.localLogoAyer}.png`} width='30' height='30'/>
                 <span>{resultado?.localAyer}</span>
               </div>
               <div className="carreras">{resultado?.localCarrerasAyer}</div>

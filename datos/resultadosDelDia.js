@@ -11,21 +11,19 @@ export default async function controller() {
   $(contenedor)
     .find(".Mini_DayScore")
     .each(function () {
-      let estado = $(this).find(".Mini_DayScore_Row span").text();
+      let estado = $(this).find(".Mini_DayScore_Row span.span_estado").text();
+      let outs = $(this).find(".Mini_DayScore_Row span.span_outs").text();
 
       let visitante = $(this).find('div:nth-child(1) > span.Mini_DayScore_Siglas.MDSN').text();
-      let visitanteLogo = $(this).find('div:nth-child(1) > img').attr('src');
+      let visitanteLogo = $(this).find('div:nth-child(1) > span.Mini_DayScore_Siglas.MDSS').text();
       let visitanteCarreras = $(this).find('div:nth-child(2) > div:nth-child(1) > span').text();
 
       let local = $(this).find('div:nth-child(2) > span.Mini_DayScore_Siglas.MDSN').text();
-      let localLogo = $(this).find('div:nth-child(2) > img').attr('src');
+      let localLogo = $(this).find('div:nth-child(2) > span.Mini_DayScore_Siglas.MDSS').text();
       let localCarreras  = $(this).find('div:nth-child(2) > div:nth-child(2) > span').text();
 
-      let vlogo = 'http://www.beisbolcubano.cu/' + visitanteLogo;
-      let llogo = 'http://www.beisbolcubano.cu/' + localLogo;
-
       resultados.push({
-        estado, visitante, local, vlogo, llogo, visitanteCarreras, localCarreras
+        estado, visitante, local, visitanteLogo, localLogo, visitanteCarreras, localCarreras, outs
       });
     });
 
@@ -35,18 +33,15 @@ export default async function controller() {
       let estadoAyer = $(this).find(".Mini_DayScore_Row span").text();
 
       let visitanteAyer = $(this).find('div:nth-child(1) > span.Mini_DayScore_Siglas.MDSN').text();
-      let visitanteLogoAyer = $(this).find('div:nth-child(1) > img').attr('src');
+      let visitanteLogoAyer = $(this).find('div:nth-child(1) > span.Mini_DayScore_Siglas.MDSS').text();
       let visitanteCarrerasAyer = $(this).find('div:nth-child(2) > div:nth-child(1) > span').text();
 
       let localAyer = $(this).find('div:nth-child(2) > span.Mini_DayScore_Siglas.MDSN').text();
-      let localLogoAyer = $(this).find('div:nth-child(2) > img').attr('src');
+      let localLogoAyer = $(this).find('div:nth-child(2) > span.Mini_DayScore_Siglas.MDSS').text();
       let localCarrerasAyer = $(this).find('div:nth-child(2) > div:nth-child(2) > span').text();
 
-      let vlogoAyer = 'http://www.beisbolcubano.cu/' + visitanteLogoAyer;
-      let llogoAyer = 'http://www.beisbolcubano.cu/' + localLogoAyer;
-
       resultados.push({
-        estadoAyer, visitanteAyer, localAyer, vlogoAyer, llogoAyer, visitanteCarrerasAyer, localCarrerasAyer
+        estadoAyer, visitanteAyer, localAyer, visitanteLogoAyer, localLogoAyer, visitanteCarrerasAyer, localCarrerasAyer
       });
     });
 
