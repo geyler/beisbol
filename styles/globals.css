@@ -14,3 +14,77 @@ a {
 * {
   box-sizing: border-box;
 }
+ul.resultados-del-dia {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+ul.resultados-del-dia li {
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #fbfbfb;
+  margin: 5px;
+}
+.estado-li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+.logo-nombre span {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 0px 0px 0px 10px;
+}
+.logo-nombre {
+  display: flex;
+  align-items: center;
+}
+.logo-equipo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26px;
+  font-weight: bold;
+}
+.titulo-contenedor h3 {
+  font-size: 26px;
+  margin: 0px;
+  padding: 10px 10px 5px 10px;
+}
+.titulo-contenedor span {
+  font-size: 20px;
+  padding: 0px 10px;
+  margin: 0px;
+}
+.titulo-contenedor {
+  margin: 10px 0px 20px;
+}
+
+@media(max-width:9999px ){
+  ul.resultados-del-dia li {
+    width:calc(25% - 10px);
+}
+}
+@media(max-width:900px ){
+  ul.resultados-del-dia li {
+    width:calc(33% - 10px);
+}
+}
+@media(max-width:700px ){
+  ul.resultados-del-dia li {
+    width:calc(50% - 10px);
+}
+}
+@media(max-width:500px ){
+  ul.resultados-del-dia li {
+    width:calc(100% - 10px);
+}
+}

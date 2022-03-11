@@ -6,7 +6,15 @@ export default async function controller() {
   let $ = cheerio.load(data);
   let contenedor = $("#MainContent_MiniDayScore_UC_sidebarDayScore_Left");
   let contenedorAyer = $("#MainContent_PreviousMiniDayScore_UC_sidebarDayScore_Left");
+  let tituloHoy = $('#MainContent_MiniDayScore_UC_sidebarDayScore_Left > div > div.widget_header_DayScore > h4 > b').text();
+  let tituloAyer = $('#MainContent_PreviousMiniDayScore_UC_sidebarDayScore_Left > div > div.widget_header_DayScore > h4 > b').text();
+  let fechaHoy = $('#MainContent_MiniDayScore_UC_fecha_link > a').text();
+  let fechaAyer = $('#MainContent_PreviousMiniDayScore_UC_sidebarDayScore_Left > div > div.widget_header_DayScore > a').text();
   let resultados = [];
+
+  resultados.push({
+    tituloHoy, tituloAyer, fechaHoy, fechaAyer
+  });
 
   $(contenedor)
     .find(".Mini_DayScore")
